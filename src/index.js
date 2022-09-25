@@ -9,5 +9,5 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 server
   .listen()
-  .then(({ url }) => console.log(`Server ready at ${url}`))
+  .then(({ url }) => console.log(`Servidor rodando em: ${url}`))
   .catch((error) => console.log("Server failed: ", error));

@@ -3,10 +3,10 @@ const Student = require("../models/StudentModel");
 const studentResolver = {
   Query: {
     async allStudents() {
-      return await Student.find().clone();
+      return await Student.find();
     },
-    student(_, { id }) {
-      return Student.findById(id);
+    async student(_, { id }) {
+      return await Student.findById(id);
     },
   },
   Mutation: {

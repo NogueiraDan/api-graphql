@@ -8,6 +8,7 @@ const connectDatabase = async () => {
       console.log(mongoURL);
       return console.log("Erro ao se conectar com o banco", error);
     }
+    //console.log(mongoURL);
     return console.log("Conexão com o banco bem sucedida!");
   });
 };
