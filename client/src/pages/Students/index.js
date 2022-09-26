@@ -2,7 +2,9 @@ import React from "react";
 import { gql, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import "./student.css";
-export const GET_STUDENTS = gql`
+
+// Apollo Client Queries
+const GET_STUDENTS = gql`
   {
     allStudents {
       name
@@ -11,10 +13,16 @@ export const GET_STUDENTS = gql`
   }
 `;
 
+// Apollo Client Mutations
+/* Ainda a implementar */
+
 const Students = () => {
+  // captando o estado da nossa Query
   const { loading, error, data } = useQuery(GET_STUDENTS);
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+
+  if (loading) return <p>Loading &#8987;...</p>;
+  if (error) return <p>Parece que algo deu errado &#128546;</p>;
+
   return (
     <>
       <ul>
