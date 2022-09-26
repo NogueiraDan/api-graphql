@@ -1,4 +1,4 @@
-# API de operações CRUD de usuários, criada utilizando GraphQl e Apollo Server.
+# Aplicação React que consome uma API desenvolvida com GraphQL e Apollo (Client & Server)
 
 ## Desenvolvida para praticar os conceitos aprendidos sobre a tecnologia.
 
