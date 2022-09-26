@@ -4,17 +4,15 @@ import { Link } from "react-router-dom";
 import "./student.css";
 
 // Apollo Client Queries
-const GET_STUDENTS = gql`
+export const GET_STUDENTS = gql`
   {
     allStudents {
+      id
       name
       email
     }
   }
 `;
-
-// Apollo Client Mutations
-/* Ainda a implementar */
 
 const Students = () => {
   // captando o estado da nossa Query
@@ -27,22 +25,22 @@ const Students = () => {
     <>
       <ul>
         {data.allStudents &&
-          data.allStudents.map(({ name, email }) => (
-            <li key={email}>
+          data.allStudents.map(({ id, name, email }) => (
+            <li key={id}>
               <span>{name}</span>
 
               <div className="App-item-actions">
-                <Link to={`/student/${email}`}>
+                <Link to={`/student/${id}`}>
                   <span role="img" aria-label="visualizar">
                     &#128172;
                   </span>
                 </Link>
-                <Link to={`/editStudent/${email}`}>
+                <Link to={`/editStudent/${id}`}>
                   <span role="img" aria-label="editar">
                     &#9997;
                   </span>
                 </Link>
-                <Link to={`/deleteStudent/${email}`}>
+                <Link to={`/deleteStudent/${id}`}>
                   <span role="img" aria-label="excluir">
                     &#10060;
                   </span>
